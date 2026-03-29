@@ -1,226 +1,367 @@
 :root {
-  --bg: #fffaf3;
-  --paper: rgba(255, 255, 255, 0.82);
-  --text: #43372f;
-  --muted: #6d625a;
-  --green: #789267;
-  --coral: #cf6c59;
-  --pink: #d86f7c;
-  --line: #eadfce;
-  --shadow: 0 20px 60px rgba(107, 79, 57, 0.1);
+  --bg: #fbf7f0;
+  --paper: rgba(255, 252, 248, 0.9);
+  --paper-strong: rgba(255, 253, 249, 0.97);
+  --line: rgba(224, 213, 198, 0.95);
+  --text: #4a3d35;
+  --muted: #6f655e;
+  --green: #6f8c62;
+  --green-dark: #5c744f;
+  --shadow: 0 28px 70px rgba(112, 88, 66, 0.12);
 }
 
 * {
   box-sizing: border-box;
 }
 
+html,
 body {
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
-  background: var(--bg);
-  color: var(--text);
-  min-height: 100vh;
-  overflow-x: hidden;
-  position: relative;
+  padding: 0;
 }
 
-.bg-blur {
+body {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  color: var(--text);
+  background: linear-gradient(180deg, #fffdfa 0%, #fbf7f0 42%, #fffdfa 100%);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.color-wash {
   position: fixed;
+  z-index: 0;
   border-radius: 999px;
-  filter: blur(70px);
-  opacity: 0.45;
+  filter: blur(90px);
   pointer-events: none;
 }
 
-.blur-1 {
-  width: 320px;
-  height: 320px;
-  left: -80px;
-  top: -60px;
-  background: #ffd7df;
+.wash-1 {
+  top: -110px;
+  left: -120px;
+  width: 420px;
+  height: 420px;
+  background: rgba(242, 204, 214, 0.18);
 }
 
-.blur-2 {
-  width: 360px;
-  height: 360px;
-  right: -80px;
-  top: 80px;
-  background: #d9e9ff;
+.wash-2 {
+  top: 110px;
+  right: -130px;
+  width: 430px;
+  height: 430px;
+  background: rgba(206, 223, 243, 0.16);
 }
 
-.blur-3 {
-  width: 320px;
+.wash-3 {
+  bottom: -120px;
+  left: 90px;
+  width: 420px;
+  height: 420px;
+  background: rgba(243, 229, 183, 0.14);
+}
+
+.floral {
+  position: fixed;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.94;
+  mix-blend-mode: multiply;
+  filter: saturate(1.03) brightness(1.03);
+}
+
+/* stor vänster */
+.floral-left {
+  top: 10px;
+  left: -70px;
+  width: 420px;
+  height: 78vh;
+  min-height: 560px;
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(251, 247, 240, 0) 0%,
+      rgba(251, 247, 240, 0.06) 48%,
+      rgba(251, 247, 240, 0.78) 82%,
+      rgba(251, 247, 240, 1) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(251, 247, 240, 0) 0%,
+      rgba(251, 247, 240, 0.04) 72%,
+      rgba(251, 247, 240, 0.88) 100%
+    ),
+    url("flowers1.jpg");
+  background-size: 100% 100%, 100% 100%, cover;
+  background-position: center, center, center;
+  border-radius: 0 0 180px 0;
+}
+
+/* mindre topp höger */
+.floral-top-right {
+  top: -20px;
+  right: 30px;
+  width: 260px;
+  height: 260px;
+  background-image:
+    radial-gradient(
+      circle at 35% 70%,
+      rgba(251, 247, 240, 0.96) 0%,
+      rgba(251, 247, 240, 0.72) 34%,
+      rgba(251, 247, 240, 0.12) 72%,
+      rgba(251, 247, 240, 0) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(251, 247, 240, 0.9) 0%,
+      rgba(251, 247, 240, 0.16) 54%,
+      rgba(251, 247, 240, 0) 100%
+    ),
+    url("flowers2.jpg");
+  background-size: 100% 100%, 100% 100%, cover;
+  background-position: center, center, center;
+  border-radius: 0 0 0 150px;
+  opacity: 0.82;
+}
+
+/* liten botten vänster */
+.floral-bottom-left {
+  left: 0;
+  bottom: -8px;
+  width: 270px;
+  height: 240px;
+  background-image:
+    radial-gradient(
+      circle at 72% 28%,
+      rgba(251, 247, 240, 0.95) 0%,
+      rgba(251, 247, 240, 0.72) 34%,
+      rgba(251, 247, 240, 0.12) 74%,
+      rgba(251, 247, 240, 0) 100%
+    ),
+    linear-gradient(
+      to top,
+      rgba(251, 247, 240, 0.9) 0%,
+      rgba(251, 247, 240, 0.14) 54%,
+      rgba(251, 247, 240, 0) 100%
+    ),
+    url("flowers3.jpg");
+  background-size: 100% 100%, 100% 100%, cover;
+  background-position: center, center, center;
+  border-radius: 0 150px 0 0;
+  opacity: 0.78;
+}
+
+/* större botten höger */
+.floral-bottom-right {
+  right: -15px;
+  bottom: -12px;
+  width: 330px;
   height: 320px;
-  left: 80px;
-  bottom: -100px;
-  background: #fff0b8;
+  background-image:
+    linear-gradient(
+      to left,
+      rgba(251, 247, 240, 0) 0%,
+      rgba(251, 247, 240, 0.08) 46%,
+      rgba(251, 247, 240, 0.82) 82%,
+      rgba(251, 247, 240, 1) 100%
+    ),
+    linear-gradient(
+      to top,
+      rgba(251, 247, 240, 0.92) 0%,
+      rgba(251, 247, 240, 0.14) 54%,
+      rgba(251, 247, 240, 0) 100%
+    ),
+    url("flowers4.jpg");
+  background-size: 100% 100%, 100% 100%, cover;
+  background-position: center, center, center;
+  border-radius: 180px 0 0 0;
 }
 
 .page {
-  width: min(1180px, calc(100% - 32px));
-  margin: 0 auto;
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 28px;
-  align-items: center;
-  padding: 36px 0;
   position: relative;
-  z-index: 1;
+  z-index: 3;
+  width: min(920px, calc(100% - 32px));
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 42px 0;
 }
 
-.card,
-.flowers-panel {
-  border: 1px solid var(--line);
-  border-radius: 32px;
-  background: var(--paper);
-  backdrop-filter: blur(8px);
+.invite-card {
+  position: relative;
+  width: 100%;
+  padding: 56px 34px;
+  text-align: center;
+  border-radius: 34px;
+  border: 1px solid rgba(224, 212, 196, 0.95);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.68), rgba(255, 251, 246, 0.92)),
+    var(--paper);
+  backdrop-filter: blur(10px);
   box-shadow: var(--shadow);
 }
 
-.card {
-  padding: 48px 32px;
+.invite-card::before {
+  content: "";
+  position: absolute;
+  inset: 13px;
+  border-radius: 24px;
+  border: 1px solid rgba(223, 209, 193, 0.58);
+  pointer-events: none;
 }
 
 .eyebrow {
   margin: 0 0 14px;
-  font-size: 14px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--green);
-  font-family: Arial, sans-serif;
+  color: var(--green-dark);
 }
 
 h1 {
   margin: 0;
-  font-size: clamp(52px, 9vw, 96px);
+  font-size: clamp(54px, 9vw, 92px);
   line-height: 0.95;
+  letter-spacing: -0.02em;
   font-weight: 600;
 }
 
 .names {
-  margin: 18px 0 8px;
-  font-size: clamp(34px, 4vw, 46px);
-  color: var(--pink);
+  margin: 18px 0 10px;
+  font-size: clamp(34px, 5vw, 48px);
+  line-height: 1.1;
   font-style: italic;
+  color: var(--green);
 }
 
 .subtitle {
   margin: 0;
-  font-size: 22px;
-  color: var(--muted);
   font-family: Arial, sans-serif;
+  font-size: 21px;
+  line-height: 1.45;
+  color: var(--muted);
 }
 
 .date-pill {
   display: inline-block;
   margin-top: 28px;
-  padding: 14px 28px;
+  padding: 14px 30px;
   border-radius: 999px;
-  background: #fff7f8;
-  border: 1px solid #f0d7d7;
-  color: var(--coral);
-  font-size: 40px;
+  border: 1px solid rgba(167, 186, 153, 0.82);
+  background: linear-gradient(180deg, #f7fbf4 0%, #eef6e8 100%);
+  color: var(--green-dark);
+  font-size: 38px;
   font-weight: 600;
+  box-shadow: 0 8px 20px rgba(113, 138, 99, 0.1);
 }
 
 .info-grid {
-  margin-top: 34px;
+  margin-top: 36px;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
+  text-align: left;
 }
 
 .info-box {
-  background: #fffdf9;
-  border: 1px solid #eee2d4;
-  border-radius: 24px;
   padding: 18px;
+  border-radius: 24px;
+  border: 1px solid var(--line);
+  background: var(--paper-strong);
+  box-shadow: 0 10px 24px rgba(121, 96, 67, 0.04);
 }
 
 .info-box span {
   display: block;
+  font-family: Arial, sans-serif;
   font-size: 12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--green);
-  font-family: Arial, sans-serif;
+  color: var(--green-dark);
 }
 
 .info-box p {
   margin: 10px 0 0;
   font-size: 22px;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
-.flowers-panel {
-  min-height: 620px;
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(180deg, #faf3e8 0%, #fffaf4 100%);
+.info-box-wide {
+  grid-column: 1 / -1;
 }
 
-.crate {
-  position: absolute;
-  background: #9b6b45;
-  box-shadow: 0 10px 30px rgba(69, 41, 22, 0.18);
-  opacity: 0.95;
-}
-
-.crate-1 {
-  width: 110px;
-  height: 210px;
-  left: 32px;
-  bottom: 44px;
-  border-radius: 24px 24px 8px 8px;
-}
-
-.crate-2 {
-  width: 170px;
-  height: 250px;
-  left: 118px;
-  bottom: 26px;
-  border-radius: 12px;
-}
-
-.crate-3 {
-  width: 140px;
-  height: 80px;
-  right: 28px;
-  bottom: 42px;
-  border-radius: 10px;
-}
-
-.flower {
-  position: absolute;
-  line-height: 1;
-  user-select: none;
-}
-
-.flower-a { left: 22px; top: 84px; font-size: 66px; }
-.flower-b { left: 98px; top: 52px; font-size: 42px; }
-.flower-c { left: 176px; top: 94px; font-size: 48px; }
-.flower-d { left: 240px; top: 68px; font-size: 44px; }
-.flower-e { right: 56px; top: 84px; font-size: 62px; }
-.flower-f { left: 54px; bottom: 180px; font-size: 76px; }
-.flower-g { left: 146px; bottom: 220px; font-size: 46px; }
-.flower-h { left: 220px; bottom: 160px; font-size: 54px; }
-.flower-i { right: 34px; bottom: 138px; font-size: 64px; }
-.flower-j { right: 100px; bottom: 120px; font-size: 50px; }
-
-@media (max-width: 900px) {
-  .page {
-    grid-template-columns: 1fr;
+@media (max-width: 1100px) {
+  .floral-left {
+    width: 320px;
+    min-height: 480px;
   }
 
-  .flowers-panel {
-    min-height: 420px;
+  .floral-top-right {
+    width: 210px;
+    height: 210px;
+    right: 10px;
+  }
+
+  .floral-bottom-left {
+    width: 220px;
+    height: 200px;
+  }
+
+  .floral-bottom-right {
+    width: 270px;
+    height: 260px;
+  }
+}
+
+@media (max-width: 900px) {
+  .floral-left {
+    width: 220px;
+    min-height: 360px;
+    left: -28px;
+    opacity: 0.8;
+  }
+
+  .floral-top-right {
+    width: 150px;
+    height: 150px;
+    top: 8px;
+    opacity: 0.68;
+  }
+
+  .floral-bottom-left {
+    width: 150px;
+    height: 135px;
+    opacity: 0.62;
+  }
+
+  .floral-bottom-right {
+    width: 200px;
+    height: 190px;
+    opacity: 0.72;
   }
 }
 
 @media (max-width: 640px) {
-  .card {
+  .page {
+    width: min(100% - 20px, 920px);
+    padding: 18px 0;
+  }
+
+  .invite-card {
     padding: 34px 20px;
+    border-radius: 28px;
+  }
+
+  .invite-card::before {
+    inset: 10px;
+    border-radius: 20px;
   }
 
   .subtitle {
@@ -229,13 +370,42 @@ h1 {
 
   .date-pill {
     font-size: 32px;
+    padding: 12px 24px;
   }
 
   .info-grid {
     grid-template-columns: 1fr;
   }
 
+  .info-box-wide {
+    grid-column: auto;
+  }
+
   .info-box p {
     font-size: 20px;
+  }
+
+  .floral-left {
+    width: 120px;
+    min-height: 240px;
+    top: 70px;
+    left: -18px;
+    opacity: 0.64;
+  }
+
+  .floral-top-right {
+    display: none;
+  }
+
+  .floral-bottom-left {
+    display: none;
+  }
+
+  .floral-bottom-right {
+    width: 120px;
+    height: 120px;
+    right: -8px;
+    bottom: -4px;
+    opacity: 0.62;
   }
 }
