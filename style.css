@@ -61,124 +61,56 @@ body {
   background: rgba(243, 229, 183, 0.14);
 }
 
-.floral {
+.flower-image {
   position: fixed;
   z-index: 1;
   pointer-events: none;
   user-select: none;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  opacity: 0.94;
-  mix-blend-mode: multiply;
+  object-fit: cover;
+  opacity: 0.92;
   filter: saturate(1.03) brightness(1.03);
 }
 
-/* stor vänster */
-.floral-left {
-  top: 10px;
-  left: -70px;
-  width: 420px;
-  height: 78vh;
-  min-height: 560px;
-  background-image:
-    linear-gradient(
-      to right,
-      rgba(251, 247, 240, 0) 0%,
-      rgba(251, 247, 240, 0.06) 48%,
-      rgba(251, 247, 240, 0.78) 82%,
-      rgba(251, 247, 240, 1) 100%
-    ),
-    linear-gradient(
-      to bottom,
-      rgba(251, 247, 240, 0) 0%,
-      rgba(251, 247, 240, 0.04) 72%,
-      rgba(251, 247, 240, 0.88) 100%
-    ),
-    url("flowers1.jpg");
-  background-size: 100% 100%, 100% 100%, cover;
-  background-position: center, center, center;
-  border-radius: 0 0 180px 0;
+.flower-image-1 {
+  top: 20px;
+  left: -40px;
+  width: 320px;
+  height: 620px;
+  object-position: center;
+  mask-image: linear-gradient(to right, black 0%, black 46%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, black 0%, black 46%, transparent 100%);
 }
 
-/* mindre topp höger */
-.floral-top-right {
-  top: -20px;
-  right: 30px;
-  width: 260px;
-  height: 260px;
-  background-image:
-    radial-gradient(
-      circle at 35% 70%,
-      rgba(251, 247, 240, 0.96) 0%,
-      rgba(251, 247, 240, 0.72) 34%,
-      rgba(251, 247, 240, 0.12) 72%,
-      rgba(251, 247, 240, 0) 100%
-    ),
-    linear-gradient(
-      to bottom,
-      rgba(251, 247, 240, 0.9) 0%,
-      rgba(251, 247, 240, 0.16) 54%,
-      rgba(251, 247, 240, 0) 100%
-    ),
-    url("flowers2.jpg");
-  background-size: 100% 100%, 100% 100%, cover;
-  background-position: center, center, center;
-  border-radius: 0 0 0 150px;
-  opacity: 0.82;
+.flower-image-2 {
+  top: 0;
+  right: 10px;
+  width: 220px;
+  height: 220px;
+  object-position: center;
+  mask-image: radial-gradient(circle at 40% 70%, black 0%, black 42%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle at 40% 70%, black 0%, black 42%, transparent 100%);
+  opacity: 0.8;
 }
 
-/* liten botten vänster */
-.floral-bottom-left {
+.flower-image-3 {
   left: 0;
-  bottom: -8px;
-  width: 270px;
-  height: 240px;
-  background-image:
-    radial-gradient(
-      circle at 72% 28%,
-      rgba(251, 247, 240, 0.95) 0%,
-      rgba(251, 247, 240, 0.72) 34%,
-      rgba(251, 247, 240, 0.12) 74%,
-      rgba(251, 247, 240, 0) 100%
-    ),
-    linear-gradient(
-      to top,
-      rgba(251, 247, 240, 0.9) 0%,
-      rgba(251, 247, 240, 0.14) 54%,
-      rgba(251, 247, 240, 0) 100%
-    ),
-    url("flowers3.jpg");
-  background-size: 100% 100%, 100% 100%, cover;
-  background-position: center, center, center;
-  border-radius: 0 150px 0 0;
-  opacity: 0.78;
+  bottom: 0;
+  width: 230px;
+  height: 200px;
+  object-position: center;
+  mask-image: radial-gradient(circle at 72% 28%, black 0%, black 40%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle at 72% 28%, black 0%, black 40%, transparent 100%);
+  opacity: 0.76;
 }
 
-/* större botten höger */
-.floral-bottom-right {
-  right: -15px;
-  bottom: -12px;
-  width: 330px;
-  height: 320px;
-  background-image:
-    linear-gradient(
-      to left,
-      rgba(251, 247, 240, 0) 0%,
-      rgba(251, 247, 240, 0.08) 46%,
-      rgba(251, 247, 240, 0.82) 82%,
-      rgba(251, 247, 240, 1) 100%
-    ),
-    linear-gradient(
-      to top,
-      rgba(251, 247, 240, 0.92) 0%,
-      rgba(251, 247, 240, 0.14) 54%,
-      rgba(251, 247, 240, 0) 100%
-    ),
-    url("flowers4.jpg");
-  background-size: 100% 100%, 100% 100%, cover;
-  background-position: center, center, center;
-  border-radius: 180px 0 0 0;
+.flower-image-4 {
+  right: -10px;
+  bottom: -10px;
+  width: 300px;
+  height: 300px;
+  object-position: center;
+  mask-image: linear-gradient(to left, black 0%, black 42%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to left, black 0%, black 42%, transparent 100%);
 }
 
 .page {
@@ -195,6 +127,7 @@ body {
 
 .invite-card {
   position: relative;
+  overflow: hidden;
   width: 100%;
   padding: 56px 34px;
   text-align: center;
@@ -214,6 +147,66 @@ body {
   border-radius: 24px;
   border: 1px solid rgba(223, 209, 193, 0.58);
   pointer-events: none;
+  z-index: 3;
+}
+
+.card-flower {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+  object-fit: cover;
+  filter: saturate(1.04) brightness(1.04);
+}
+
+.card-flower-1 {
+  top: -10px;
+  left: -12px;
+  width: 180px;
+  height: 160px;
+  opacity: 0.22;
+  mask-image: radial-gradient(circle at 25% 25%, black 0%, black 52%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle at 25% 25%, black 0%, black 52%, transparent 100%);
+}
+
+.card-flower-2 {
+  top: 60px;
+  right: -24px;
+  width: 170px;
+  height: 190px;
+  opacity: 0.16;
+  mask-image: radial-gradient(circle at 70% 30%, black 0%, black 48%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle at 70% 30%, black 0%, black 48%, transparent 100%);
+}
+
+.card-flower-3 {
+  top: 250px;
+  left: -18px;
+  width: 150px;
+  height: 220px;
+  opacity: 0.12;
+  mask-image: linear-gradient(to right, black 0%, black 42%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, black 0%, black 42%, transparent 100%);
+}
+
+.card-flower-4 {
+  bottom: 40px;
+  right: -18px;
+  width: 170px;
+  height: 240px;
+  opacity: 0.14;
+  mask-image: linear-gradient(to left, black 0%, black 42%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to left, black 0%, black 42%, transparent 100%);
+}
+
+.eyebrow,
+h1,
+.names,
+.subtitle,
+.date-pill,
+.info-grid {
+  position: relative;
+  z-index: 2;
 }
 
 .eyebrow {
@@ -297,54 +290,35 @@ h1 {
   grid-column: 1 / -1;
 }
 
-@media (max-width: 1100px) {
-  .floral-left {
-    width: 320px;
-    min-height: 480px;
-  }
-
-  .floral-top-right {
-    width: 210px;
-    height: 210px;
-    right: 10px;
-  }
-
-  .floral-bottom-left {
-    width: 220px;
-    height: 200px;
-  }
-
-  .floral-bottom-right {
-    width: 270px;
-    height: 260px;
-  }
-}
-
 @media (max-width: 900px) {
-  .floral-left {
-    width: 220px;
-    min-height: 360px;
-    left: -28px;
-    opacity: 0.8;
-  }
-
-  .floral-top-right {
-    width: 150px;
-    height: 150px;
-    top: 8px;
-    opacity: 0.68;
-  }
-
-  .floral-bottom-left {
-    width: 150px;
-    height: 135px;
-    opacity: 0.62;
-  }
-
-  .floral-bottom-right {
-    width: 200px;
-    height: 190px;
+  .flower-image-1 {
+    width: 180px;
+    height: 380px;
+    left: -10px;
     opacity: 0.72;
+  }
+
+  .flower-image-2 {
+    width: 130px;
+    height: 130px;
+    opacity: 0.64;
+  }
+
+  .flower-image-3 {
+    width: 140px;
+    height: 120px;
+    opacity: 0.58;
+  }
+
+  .flower-image-4 {
+    width: 180px;
+    height: 180px;
+    opacity: 0.66;
+  }
+
+  .card-flower-2,
+  .card-flower-4 {
+    opacity: 0.1;
   }
 }
 
@@ -385,27 +359,36 @@ h1 {
     font-size: 20px;
   }
 
-  .floral-left {
-    width: 120px;
-    min-height: 240px;
-    top: 70px;
-    left: -18px;
-    opacity: 0.64;
+  .flower-image-1 {
+    width: 95px;
+    height: 220px;
+    top: 90px;
+    left: -10px;
+    opacity: 0.55;
   }
 
-  .floral-top-right {
+  .flower-image-2,
+  .flower-image-3 {
     display: none;
   }
 
-  .floral-bottom-left {
-    display: none;
+  .flower-image-4 {
+    width: 100px;
+    height: 100px;
+    right: -5px;
+    bottom: -5px;
+    opacity: 0.56;
   }
 
-  .floral-bottom-right {
+  .card-flower-1 {
     width: 120px;
-    height: 120px;
-    right: -8px;
-    bottom: -4px;
-    opacity: 0.62;
+    height: 110px;
+    opacity: 0.16;
+  }
+
+  .card-flower-2,
+  .card-flower-3,
+  .card-flower-4 {
+    display: none;
   }
 }
