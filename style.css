@@ -1,0 +1,241 @@
+:root {
+  --bg: #fffaf3;
+  --paper: rgba(255, 255, 255, 0.82);
+  --text: #43372f;
+  --muted: #6d625a;
+  --green: #789267;
+  --coral: #cf6c59;
+  --pink: #d86f7c;
+  --line: #eadfce;
+  --shadow: 0 20px 60px rgba(107, 79, 57, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.bg-blur {
+  position: fixed;
+  border-radius: 999px;
+  filter: blur(70px);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.blur-1 {
+  width: 320px;
+  height: 320px;
+  left: -80px;
+  top: -60px;
+  background: #ffd7df;
+}
+
+.blur-2 {
+  width: 360px;
+  height: 360px;
+  right: -80px;
+  top: 80px;
+  background: #d9e9ff;
+}
+
+.blur-3 {
+  width: 320px;
+  height: 320px;
+  left: 80px;
+  bottom: -100px;
+  background: #fff0b8;
+}
+
+.page {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 28px;
+  align-items: center;
+  padding: 36px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.card,
+.flowers-panel {
+  border: 1px solid var(--line);
+  border-radius: 32px;
+  background: var(--paper);
+  backdrop-filter: blur(8px);
+  box-shadow: var(--shadow);
+}
+
+.card {
+  padding: 48px 32px;
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  font-size: 14px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--green);
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(52px, 9vw, 96px);
+  line-height: 0.95;
+  font-weight: 600;
+}
+
+.names {
+  margin: 18px 0 8px;
+  font-size: clamp(34px, 4vw, 46px);
+  color: var(--pink);
+  font-style: italic;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 22px;
+  color: var(--muted);
+  font-family: Arial, sans-serif;
+}
+
+.date-pill {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  background: #fff7f8;
+  border: 1px solid #f0d7d7;
+  color: var(--coral);
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.info-grid {
+  margin-top: 34px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.info-box {
+  background: #fffdf9;
+  border: 1px solid #eee2d4;
+  border-radius: 24px;
+  padding: 18px;
+}
+
+.info-box span {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--green);
+  font-family: Arial, sans-serif;
+}
+
+.info-box p {
+  margin: 10px 0 0;
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+.flowers-panel {
+  min-height: 620px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #faf3e8 0%, #fffaf4 100%);
+}
+
+.crate {
+  position: absolute;
+  background: #9b6b45;
+  box-shadow: 0 10px 30px rgba(69, 41, 22, 0.18);
+  opacity: 0.95;
+}
+
+.crate-1 {
+  width: 110px;
+  height: 210px;
+  left: 32px;
+  bottom: 44px;
+  border-radius: 24px 24px 8px 8px;
+}
+
+.crate-2 {
+  width: 170px;
+  height: 250px;
+  left: 118px;
+  bottom: 26px;
+  border-radius: 12px;
+}
+
+.crate-3 {
+  width: 140px;
+  height: 80px;
+  right: 28px;
+  bottom: 42px;
+  border-radius: 10px;
+}
+
+.flower {
+  position: absolute;
+  line-height: 1;
+  user-select: none;
+}
+
+.flower-a { left: 22px; top: 84px; font-size: 66px; }
+.flower-b { left: 98px; top: 52px; font-size: 42px; }
+.flower-c { left: 176px; top: 94px; font-size: 48px; }
+.flower-d { left: 240px; top: 68px; font-size: 44px; }
+.flower-e { right: 56px; top: 84px; font-size: 62px; }
+.flower-f { left: 54px; bottom: 180px; font-size: 76px; }
+.flower-g { left: 146px; bottom: 220px; font-size: 46px; }
+.flower-h { left: 220px; bottom: 160px; font-size: 54px; }
+.flower-i { right: 34px; bottom: 138px; font-size: 64px; }
+.flower-j { right: 100px; bottom: 120px; font-size: 50px; }
+
+@media (max-width: 900px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+
+  .flowers-panel {
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 34px 20px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+
+  .date-pill {
+    font-size: 32px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info-box p {
+    font-size: 20px;
+  }
+}
