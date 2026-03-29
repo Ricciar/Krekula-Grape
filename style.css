@@ -1,13 +1,13 @@
 :root {
-  --bg: #fbf7f0;
-  --paper: rgba(255, 252, 248, 0.9);
-  --paper-strong: rgba(255, 253, 249, 0.94);
-  --line: rgba(224, 213, 198, 0.95);
+  --bg: #dcebd6;
+  --paper: rgba(232, 244, 228, 0.9);
+  --paper-strong: rgba(238, 248, 235, 0.95);
+  --line: rgba(184, 205, 179, 0.95);
   --text: #4a3d35;
-  --muted: #6f655e;
+  --muted: #677062;
   --green: #6f8c62;
-  --green-dark: #5c744f;
-  --shadow: 0 28px 70px rgba(112, 88, 66, 0.12);
+  --green-dark: #4f6848;
+  --shadow: 0 28px 70px rgba(88, 110, 88, 0.14);
 }
 
 * {
@@ -20,12 +20,16 @@ body {
   padding: 0;
 }
 
+html {
+  background: #dcebd6;
+}
+
 body {
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
   color: var(--text);
-  background: linear-gradient(180deg, #fffdfa 0%, #fbf7f0 42%, #fffdfa 100%);
+  background: linear-gradient(180deg, #dcebd6 0%, #cfe3c8 42%, #d9ead3 100%);
   font-family: Georgia, "Times New Roman", serif;
 }
 
@@ -42,7 +46,7 @@ body {
   left: -120px;
   width: 420px;
   height: 420px;
-  background: rgba(242, 204, 214, 0.18);
+  background: rgba(194, 225, 194, 0.32);
 }
 
 .wash-2 {
@@ -50,7 +54,7 @@ body {
   right: -130px;
   width: 430px;
   height: 430px;
-  background: rgba(206, 223, 243, 0.16);
+  background: rgba(178, 214, 184, 0.28);
 }
 
 .wash-3 {
@@ -58,65 +62,23 @@ body {
   left: 90px;
   width: 420px;
   height: 420px;
-  background: rgba(243, 229, 183, 0.14);
+  background: rgba(214, 235, 200, 0.28);
 }
 
-.flower-image {
+.flower-background {
   position: fixed;
+  top: 50%;
+  left: 50%;
   z-index: 1;
+  width: 110vw;
+  height: 110vh;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  object-position: center;
   pointer-events: none;
   user-select: none;
-  object-fit: cover;
-  opacity: 0.88;
-  filter: saturate(1.02) brightness(1.02);
-}
-
-/* vänster stor */
-.flower-image-1 {
-  top: 0;
-  left: -20px;
-  width: 300px;
-  height: 68vh;
-  min-height: 520px;
-  object-position: center;
-  mask-image: linear-gradient(to right, black 0%, black 48%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, black 0%, black 48%, transparent 100%);
-}
-
-/* höger uppe */
-.flower-image-2 {
-  top: 0;
-  right: 0;
-  width: 210px;
-  height: 210px;
-  object-position: center;
-  mask-image: radial-gradient(circle at 40% 70%, black 0%, black 48%, transparent 100%);
-  -webkit-mask-image: radial-gradient(circle at 40% 70%, black 0%, black 48%, transparent 100%);
-  opacity: 0.7;
-}
-
-/* vänster nere */
-.flower-image-3 {
-  left: 0;
-  bottom: 0;
-  width: 220px;
-  height: 190px;
-  object-position: center;
-  mask-image: radial-gradient(circle at 72% 28%, black 0%, black 42%, transparent 100%);
-  -webkit-mask-image: radial-gradient(circle at 72% 28%, black 0%, black 42%, transparent 100%);
-  opacity: 0.72;
-}
-
-/* höger nere */
-.flower-image-4 {
-  right: 0;
-  bottom: 0;
-  width: 280px;
-  height: 280px;
-  object-position: center;
-  mask-image: linear-gradient(to left, black 0%, black 44%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to left, black 0%, black 44%, transparent 100%);
-  opacity: 0.78;
+  opacity: 0.24;
+  filter: saturate(1.18) contrast(1.04) brightness(1.02);
 }
 
 .page {
@@ -138,9 +100,9 @@ body {
   padding: 56px 34px;
   text-align: center;
   border-radius: 34px;
-  border: 1px solid rgba(224, 212, 196, 0.95);
+  border: 1px solid rgba(180, 201, 174, 0.95);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.6), rgba(255, 251, 246, 0.84)),
+    linear-gradient(180deg, rgba(231, 244, 227, 0.88), rgba(223, 239, 218, 0.9)),
     var(--paper);
   backdrop-filter: blur(8px);
   box-shadow: var(--shadow);
@@ -151,7 +113,7 @@ body {
   position: absolute;
   inset: 13px;
   border-radius: 24px;
-  border: 1px solid rgba(223, 209, 193, 0.58);
+  border: 1px solid rgba(178, 198, 173, 0.65);
   pointer-events: none;
   z-index: 4;
 }
@@ -161,130 +123,41 @@ body {
   z-index: 3;
 }
 
-.card-flower {
-  position: absolute;
-  z-index: 0;
-  pointer-events: none;
-  user-select: none;
-  object-fit: cover;
-  filter: saturate(1.04) brightness(1.04);
-}
-
-/* mycket mer blom överst vänster */
-.card-flower-1 {
-  top: -25px;
-  left: -20px;
-  width: 240px;
-  height: 200px;
-  opacity: 0.24;
-  mask-image: radial-gradient(circle at 25% 25%, black 0%, black 56%, transparent 100%);
-  -webkit-mask-image: radial-gradient(circle at 25% 25%, black 0%, black 56%, transparent 100%);
-}
-
-/* mycket mer blom överst höger */
-.card-flower-2 {
-  top: -15px;
-  right: -20px;
-  width: 240px;
-  height: 220px;
-  opacity: 0.2;
-  mask-image: radial-gradient(circle at 72% 28%, black 0%, black 54%, transparent 100%);
-  -webkit-mask-image: radial-gradient(circle at 72% 28%, black 0%, black 54%, transparent 100%);
-}
-
-/* vänster mitt nära text */
-.card-flower-3 {
-  top: 200px;
-  left: -26px;
-  width: 190px;
-  height: 260px;
-  opacity: 0.15;
-  mask-image: linear-gradient(to right, black 0%, black 46%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, black 0%, black 46%, transparent 100%);
-}
-
-/* höger mitt nära text */
-.card-flower-4 {
-  top: 250px;
-  right: -24px;
-  width: 190px;
-  height: 260px;
-  opacity: 0.15;
-  mask-image: linear-gradient(to left, black 0%, black 46%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to left, black 0%, black 46%, transparent 100%);
-}
-
-/* runt datum */
-.card-flower-5 {
-  top: 115px;
-  left: 50%;
-  width: 260px;
-  height: 180px;
-  transform: translateX(-50%);
-  opacity: 0.1;
-  mask-image: radial-gradient(circle at 50% 50%, black 0%, black 44%, transparent 100%);
-  -webkit-mask-image: radial-gradient(circle at 50% 50%, black 0%, black 44%, transparent 100%);
-}
-
-/* nere i kortet */
-.card-flower-6 {
-  bottom: -20px;
-  right: 80px;
-  width: 260px;
-  height: 180px;
-  opacity: 0.12;
-  mask-image: radial-gradient(circle at 50% 50%, black 0%, black 44%, transparent 100%);
-  -webkit-mask-image: radial-gradient(circle at 50% 50%, black 0%, black 44%, transparent 100%);
-}
-
-.eyebrow {
-  margin: 0 0 14px;
-  font-family: Arial, sans-serif;
-  font-size: 13px;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--green-dark);
-}
-
 h1 {
   margin: 0;
-  font-size: clamp(54px, 9vw, 92px);
-  line-height: 0.95;
-  letter-spacing: -0.02em;
-  font-weight: 600;
 }
 
-.names {
-  margin: 18px 0 10px;
-  font-size: clamp(34px, 5vw, 48px);
-  line-height: 1.1;
-  font-style: italic;
-  color: var(--green);
-}
-
-.subtitle {
+.hero-script {
   margin: 0;
-  font-family: Arial, sans-serif;
-  font-size: 21px;
-  line-height: 1.45;
-  color: var(--muted);
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(56px, 8vw, 100px);
+  line-height: 1.1;
+  font-weight: 400;
+  color: #2f3a2f;
+  letter-spacing: 0;
 }
 
-.date-pill {
-  display: inline-block;
-  margin-top: 28px;
-  padding: 14px 30px;
-  border-radius: 999px;
-  border: 1px solid rgba(167, 186, 153, 0.82);
-  background: linear-gradient(180deg, #f7fbf4 0%, #eef6e8 100%);
+.hero-date {
+  margin: 8px 0 0;
+  font-size: clamp(22px, 3vw, 34px);
+  line-height: 1.3;
   color: var(--green-dark);
-  font-size: 38px;
-  font-weight: 600;
-  box-shadow: 0 8px 20px rgba(113, 138, 99, 0.1);
+}
+
+.welcome-section {
+  max-width: 620px;
+  margin: 26px auto 0;
+}
+
+.welcome-text {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.6;
+  color: var(--text);
 }
 
 .info-grid {
-  margin-top: 36px;
+  margin-top: 34px;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
@@ -314,54 +187,110 @@ h1 {
   line-height: 1.45;
 }
 
-.info-box-wide {
+.rsvp-section {
+  margin-top: 42px;
+  padding: 28px 22px;
+  border-radius: 28px;
+  border: 1px solid var(--line);
+  background: var(--paper-strong);
+  box-shadow: 0 10px 24px rgba(121, 96, 67, 0.04);
+  text-align: left;
+}
+
+.rsvp-text {
+  margin: 0 0 24px;
+  font-size: 22px;
+  line-height: 1.45;
+  color: var(--text);
+  text-align: center;
+}
+
+.rsvp-form {
+  display: block;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field-wide {
   grid-column: 1 / -1;
 }
 
+.form-field label {
+  margin-bottom: 8px;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--green-dark);
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(248, 252, 246, 0.95);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: rgba(111, 140, 98, 0.75);
+  box-shadow: 0 0 0 4px rgba(111, 140, 98, 0.12);
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.rsvp-button {
+  margin-top: 22px;
+  padding: 14px 24px;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #7f9b72 0%, #6f8c62 100%);
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(111, 140, 98, 0.22);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.rsvp-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(111, 140, 98, 0.28);
+}
+
+.hidden-honey {
+  position: absolute !important;
+  left: -9999px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
 @media (max-width: 900px) {
-  .flower-image-1 {
-    width: 170px;
-    min-height: 340px;
-    opacity: 0.74;
-  }
-
-  .flower-image-2 {
-    width: 140px;
-    height: 140px;
-    opacity: 0.66;
-  }
-
-  .flower-image-3 {
-    width: 150px;
-    height: 130px;
-    opacity: 0.66;
-  }
-
-  .flower-image-4 {
-    width: 180px;
-    height: 180px;
-    opacity: 0.7;
-  }
-
-  .card-flower-1,
-  .card-flower-2 {
-    width: 190px;
-    height: 170px;
-    opacity: 0.24;
-  }
-
-  .card-flower-3,
-  .card-flower-4 {
-    width: 150px;
-    height: 220px;
-    opacity: 0.16;
-  }
-
-  .card-flower-5,
-  .card-flower-6 {
-    width: 210px;
-    height: 150px;
-    opacity: 0.12;
+  .flower-background {
+    opacity: 0.18;
   }
 }
 
@@ -381,105 +310,44 @@ h1 {
     border-radius: 20px;
   }
 
-  .subtitle {
-    font-size: 18px;
+  .hero-script {
+    font-size: clamp(44px, 14vw, 74px);
+    line-height: 1.08;
   }
 
-  .date-pill {
-    font-size: 32px;
-    padding: 12px 24px;
+  .hero-date {
+    font-size: 24px;
+    margin-top: 4px;
+  }
+
+  .welcome-text {
+    font-size: 20px;
+    line-height: 1.55;
   }
 
   .info-grid {
     grid-template-columns: 1fr;
   }
 
-  .info-box-wide {
-    grid-column: auto;
-  }
-
   .info-box p {
     font-size: 20px;
   }
 
-  /* på mobilen ska blommorna synas mycket mer */
-  .flower-image-1 {
-    width: 120px;
-    height: 260px;
-    top: 55px;
-    left: -10px;
-    opacity: 0.78;
+  .rsvp-section {
+    margin-top: 30px;
+    padding: 22px 16px;
+    border-radius: 22px;
   }
 
-  .flower-image-2 {
-    width: 105px;
-    height: 105px;
-    top: 0;
-    right: -6px;
-    opacity: 0.7;
+  .form-grid {
+    grid-template-columns: 1fr;
   }
 
-  .flower-image-3 {
-    width: 120px;
-    height: 100px;
-    left: -8px;
-    bottom: 0;
-    opacity: 0.7;
+  .form-field-wide {
+    grid-column: auto;
   }
 
-  .flower-image-4 {
-    width: 130px;
-    height: 130px;
-    right: -8px;
-    bottom: -4px;
-    opacity: 0.76;
-  }
-
-  .card-flower-1 {
-    top: -12px;
-    left: -12px;
-    width: 150px;
-    height: 130px;
-    opacity: 0.28;
-  }
-
-  .card-flower-2 {
-    top: -8px;
-    right: -12px;
-    width: 145px;
-    height: 130px;
-    opacity: 0.24;
-  }
-
-  .card-flower-3 {
-    top: 145px;
-    left: -18px;
-    width: 110px;
-    height: 180px;
-    opacity: 0.18;
-  }
-
-  .card-flower-4 {
-    top: 190px;
-    right: -18px;
-    width: 110px;
-    height: 180px;
-    opacity: 0.18;
-  }
-
-  .card-flower-5 {
-    top: 92px;
-    left: 50%;
-    width: 180px;
-    height: 125px;
-    opacity: 0.16;
-  }
-
-  .card-flower-6 {
-    bottom: 110px;
-    right: -6px;
-    width: 140px;
-    height: 120px;
-    opacity: 0.16;
+  .rsvp-button {
+    width: 100%;
   }
 }

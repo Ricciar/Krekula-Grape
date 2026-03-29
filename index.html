@@ -6,7 +6,13 @@
     <title>Bröllopsfest | Krekula-Grape</title>
     <meta
       name="description"
-      content="Välkommen till bröllopsfest för Krekula-Grape den 1/8."
+      content="Välkommen till bröllopsfest för Fredrik och Louise den 1 augusti 2026."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -15,36 +21,30 @@
     <div class="color-wash wash-2" aria-hidden="true"></div>
     <div class="color-wash wash-3" aria-hidden="true"></div>
 
-    <img class="flower-image flower-image-1" src="./flowers1.webp" alt="" aria-hidden="true" loading="eager" decoding="async" />
-    <img class="flower-image flower-image-2" src="./flowers2.webp" alt="" aria-hidden="true" loading="eager" decoding="async" />
-    <img class="flower-image flower-image-3" src="./flowers3.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-    <img class="flower-image flower-image-4" src="./flowers4.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+    <img
+      class="flower-background"
+      src="./flowers4.jpg"
+      alt=""
+      aria-hidden="true"
+      loading="eager"
+      decoding="async"
+    />
 
     <main class="page">
       <section class="invite-card">
-        <img class="card-flower card-flower-1" src="./flowers1.webp" alt="" aria-hidden="true" loading="eager" decoding="async" />
-        <img class="card-flower card-flower-2" src="./flowers2.webp" alt="" aria-hidden="true" loading="eager" decoding="async" />
-        <img class="card-flower card-flower-3" src="./flowers3.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-        <img class="card-flower card-flower-4" src="./flowers4.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-        <img class="card-flower card-flower-5" src="./flowers2.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-        <img class="card-flower card-flower-6" src="./flowers4.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-
         <div class="content">
-          <p class="eyebrow">Välkommen!</p>
+          <h1 class="hero-script">Fredrik &amp; Louise</h1>
+          <p class="hero-date">1 augusti 2026</p>
 
-          <h1>Bröllopsfest</h1>
-
-          <p class="names">Krekula-Grape</p>
-          <p class="subtitle">kom och fira med oss</p>
-
-          <div class="date-pill">1/8</div>
+          <section class="welcome-section">
+            <p class="welcome-text">
+              Vi gifter oss och bjuder in till bröllopsfest i vår trädgård! <br>
+              Nedan finner ni all nödvändig information.<br>
+              Hoppas ni vill fira vår dag med oss!
+            </p>
+          </section>
 
           <section class="info-grid">
-            <div class="info-box">
-              <span>För vem</span>
-              <p>Krekula-Grape</p>
-            </div>
-
             <div class="info-box">
               <span>Tid</span>
               <p>16:00</p>
@@ -64,16 +64,78 @@
               <span>Tema</span>
               <p>Sommarblomster</p>
             </div>
+          </section>
 
-            <div class="info-box">
-              <span>OSA senast</span>
-              <p>1/5</p>
-            </div>
+          <section class="rsvp-section">
+            <p class="rsvp-text">OSA senast 1 maj 2026.</p>
 
-            <div class="info-box info-box-wide">
-              <span>Allergier</span>
-              <p>Meddela allergier i samband med OSA</p>
-            </div>
+            <form
+              class="rsvp-form"
+              action="https://formsubmit.co/louise.grape@gmail.com"
+              method="POST"
+            >
+              <input type="hidden" name="_subject" value="Ny OSA till bröllopsfesten" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_url" value="https://krekula-grape.netlify.app/" />
+              <input type="hidden" name="_next" value="https://krekula-grape.netlify.app/tack.html" />
+              <input type="hidden" name="_replyto" value="email" />
+              <input
+                type="text"
+                name="_honey"
+                class="hidden-honey"
+                tabindex="-1"
+                autocomplete="off"
+              />
+
+              <div class="form-grid">
+                <div class="form-field">
+                  <label for="guest-name">Namn</label>
+                  <input id="guest-name" name="namn" type="text" required />
+                </div>
+
+                <div class="form-field">
+                  <label for="email">E-post</label>
+                  <input id="email" name="email" type="email" required />
+                </div>
+
+                <div class="form-field">
+                  <label for="phone">Telefon</label>
+                  <input id="phone" name="telefon" type="tel" />
+                </div>
+
+                <div class="form-field">
+                  <label for="attending">Kommer du?</label>
+                  <select id="attending" name="osa" required>
+                    <option value="">Välj</option>
+                    <option value="Ja, jag kommer">Ja, jag kommer</option>
+                    <option value="Nej, jag kan inte komma">Nej, jag kan inte komma</option>
+                  </select>
+                </div>
+
+                <div class="form-field form-field-wide">
+                  <label for="allergies">Allergier / specialkost</label>
+                  <textarea
+                    id="allergies"
+                    name="allergier_specialkost"
+                    rows="4"
+                    placeholder="Skriv eventuella allergier eller specialkost här"
+                  ></textarea>
+                </div>
+
+                <div class="form-field form-field-wide">
+                  <label for="message">Meddelande</label>
+                  <textarea
+                    id="message"
+                    name="meddelande"
+                    rows="4"
+                    placeholder="Valfritt meddelande"
+                  ></textarea>
+                </div>
+              </div>
+
+              <button type="submit" class="rsvp-button">Skicka OSA</button>
+            </form>
           </section>
         </div>
       </section>
