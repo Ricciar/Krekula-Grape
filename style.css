@@ -1,13 +1,17 @@
 :root {
-  --bg: #dcebd6;
-  --paper: rgba(232, 244, 228, 0.9);
-  --paper-strong: rgba(238, 248, 235, 0.95);
-  --line: rgba(184, 205, 179, 0.95);
-  --text: #4a3d35;
-  --muted: #677062;
-  --green: #6f8c62;
-  --green-dark: #4f6848;
-  --shadow: 0 28px 70px rgba(88, 110, 88, 0.14);
+  --bg: #1f2421;
+  --bg-soft: #2b332f;
+  --paper: rgba(43, 52, 47, 0.92);
+  --paper-strong: rgba(36, 44, 40, 0.96);
+  --line: rgba(214, 220, 208, 0.18);
+  --line-strong: rgba(230, 234, 226, 0.28);
+  --text: #f2eee6;
+  --muted: #c8c1b4;
+  --label: #d8d2c5;
+  --accent: #d9ccb3;
+  --accent-dark: #bca987;
+  --input-bg: rgba(255, 255, 255, 0.03);
+  --shadow: 0 30px 80px rgba(0, 0, 0, 0.34);
 }
 
 * {
@@ -21,7 +25,7 @@ body {
 }
 
 html {
-  background: #dcebd6;
+  background: var(--bg);
 }
 
 body {
@@ -29,40 +33,40 @@ body {
   position: relative;
   overflow-x: hidden;
   color: var(--text);
-  background: linear-gradient(180deg, #dcebd6 0%, #cfe3c8 42%, #d9ead3 100%);
-  font-family: Georgia, "Times New Roman", serif;
+  background: linear-gradient(180deg, #1f2421 0%, #28302c 45%, #1b201d 100%);
+  font-family: "Inter", Arial, sans-serif;
 }
 
 .color-wash {
   position: fixed;
   z-index: 0;
   border-radius: 999px;
-  filter: blur(90px);
+  filter: blur(120px);
   pointer-events: none;
 }
 
 .wash-1 {
-  top: -110px;
+  top: -140px;
   left: -120px;
   width: 420px;
   height: 420px;
-  background: rgba(194, 225, 194, 0.32);
+  background: rgba(103, 120, 102, 0.18);
 }
 
 .wash-2 {
-  top: 110px;
-  right: -130px;
-  width: 430px;
-  height: 430px;
-  background: rgba(178, 214, 184, 0.28);
+  top: 80px;
+  right: -140px;
+  width: 420px;
+  height: 420px;
+  background: rgba(145, 130, 104, 0.12);
 }
 
 .wash-3 {
-  bottom: -120px;
-  left: 90px;
+  bottom: -160px;
+  left: 80px;
   width: 420px;
   height: 420px;
-  background: rgba(214, 235, 200, 0.28);
+  background: rgba(85, 101, 88, 0.16);
 }
 
 .flower-background {
@@ -77,8 +81,8 @@ body {
   object-position: center;
   pointer-events: none;
   user-select: none;
-  opacity: 0.24;
-  filter: saturate(1.18) contrast(1.04) brightness(1.02);
+  opacity: 50;
+  filter: saturate(0.45) contrast(1.05) brightness(0.45);
 }
 
 .page {
@@ -97,23 +101,23 @@ body {
   position: relative;
   overflow: hidden;
   width: 100%;
-  padding: 56px 34px;
+  padding: 64px 40px;
   text-align: center;
-  border-radius: 34px;
-  border: 1px solid rgba(180, 201, 174, 0.95);
+  border-radius: 18px;
+  border: 1px solid var(--line);
   background:
-    linear-gradient(180deg, rgba(231, 244, 227, 0.88), rgba(223, 239, 218, 0.9)),
+    linear-gradient(180deg, rgba(46, 56, 51, 0.94), rgba(31, 37, 34, 0.96)),
     var(--paper);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(4px);
   box-shadow: var(--shadow);
 }
 
 .invite-card::before {
   content: "";
   position: absolute;
-  inset: 13px;
-  border-radius: 24px;
-  border: 1px solid rgba(178, 198, 173, 0.65);
+  inset: 14px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
   pointer-events: none;
   z-index: 4;
 }
@@ -129,79 +133,90 @@ h1 {
 
 .hero-script {
   margin: 0;
-  font-family: "Great Vibes", cursive;
-  font-size: clamp(56px, 8vw, 100px);
-  line-height: 1.1;
-  font-weight: 400;
-  color: #2f3a2f;
-  letter-spacing: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(56px, 8vw, 86px);
+  line-height: 0.98;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.02em;
 }
 
 .hero-date {
-  margin: 8px 0 0;
-  font-size: clamp(22px, 3vw, 34px);
+  margin: 18px 0 0;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: clamp(15px, 2vw, 20px);
   line-height: 1.3;
-  color: var(--green-dark);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
 }
 
 .welcome-section {
   max-width: 620px;
-  margin: 26px auto 0;
+  margin: 34px auto 0;
 }
 
 .welcome-text {
   margin: 0;
-  font-size: 22px;
-  line-height: 1.6;
-  color: var(--text);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 28px;
+  line-height: 1.45;
+  color: var(--muted);
 }
 
 .info-grid {
-  margin-top: 34px;
+  margin-top: 42px;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  gap: 14px;
   text-align: left;
 }
 
 .info-box {
-  padding: 18px;
-  border-radius: 24px;
+  padding: 22px 20px;
+  border-radius: 10px;
   border: 1px solid var(--line);
-  background: var(--paper-strong);
-  box-shadow: 0 10px 24px rgba(121, 96, 67, 0.04);
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: none;
 }
 
 .info-box span {
   display: block;
-  font-family: Arial, sans-serif;
-  font-size: 12px;
-  letter-spacing: 0.2em;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.26em;
   text-transform: uppercase;
-  color: var(--green-dark);
+  color: var(--label);
 }
 
 .info-box p {
   margin: 10px 0 0;
-  font-size: 22px;
-  line-height: 1.45;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 34px;
+  line-height: 1.15;
+  color: var(--text);
 }
 
 .rsvp-section {
   margin-top: 42px;
-  padding: 28px 22px;
-  border-radius: 28px;
+  padding: 32px 24px 24px;
+  border-radius: 12px;
   border: 1px solid var(--line);
-  background: var(--paper-strong);
-  box-shadow: 0 10px 24px rgba(121, 96, 67, 0.04);
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: none;
   text-align: left;
 }
 
 .rsvp-text {
   margin: 0 0 24px;
-  font-size: 22px;
-  line-height: 1.45;
-  color: var(--text);
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
   text-align: center;
 }
 
@@ -226,11 +241,12 @@ h1 {
 
 .form-field label {
   margin-bottom: 8px;
-  font-family: Arial, sans-serif;
-  font-size: 12px;
-  letter-spacing: 0.18em;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--green-dark);
+  color: var(--label);
 }
 
 .form-field input,
@@ -239,21 +255,27 @@ h1 {
   width: 100%;
   padding: 14px 16px;
   border: 1px solid var(--line);
-  border-radius: 18px;
-  background: rgba(248, 252, 246, 0.95);
+  border-radius: 8px;
+  background: var(--input-bg);
   color: var(--text);
-  font-family: Arial, sans-serif;
-  font-size: 16px;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 15px;
   line-height: 1.4;
   outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: rgba(242, 238, 230, 0.42);
 }
 
 .form-field input:focus,
 .form-field select:focus,
 .form-field textarea:focus {
-  border-color: rgba(111, 140, 98, 0.75);
-  box-shadow: 0 0 0 4px rgba(111, 140, 98, 0.12);
+  border-color: var(--line-strong);
+  box-shadow: 0 0 0 4px rgba(217, 204, 179, 0.08);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .form-field textarea {
@@ -263,22 +285,25 @@ h1 {
 
 .rsvp-button {
   margin-top: 22px;
-  padding: 14px 24px;
-  border: 0;
+  padding: 15px 24px;
+  border: 1px solid rgba(217, 204, 179, 0.22);
   border-radius: 999px;
-  background: linear-gradient(180deg, #7f9b72 0%, #6f8c62 100%);
-  color: #fff;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 600;
+  background: linear-gradient(180deg, #d9ccb3 0%, #bca987 100%);
+  color: #1f2421;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   cursor: pointer;
-  box-shadow: 0 10px 24px rgba(111, 140, 98, 0.22);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
 }
 
 .rsvp-button:hover {
   transform: translateY(-1px);
-  box-shadow: 0 14px 28px rgba(111, 140, 98, 0.28);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.26);
+  filter: brightness(1.03);
 }
 
 .hidden-honey {
@@ -290,7 +315,7 @@ h1 {
 
 @media (max-width: 900px) {
   .flower-background {
-    opacity: 0.18;
+    opacity: 0.07;
   }
 }
 
@@ -301,28 +326,29 @@ h1 {
   }
 
   .invite-card {
-    padding: 30px 18px;
-    border-radius: 28px;
+    padding: 34px 18px;
+    border-radius: 14px;
   }
 
   .invite-card::before {
     inset: 10px;
-    border-radius: 20px;
+    border-radius: 8px;
   }
 
   .hero-script {
-    font-size: clamp(44px, 14vw, 74px);
-    line-height: 1.08;
+    font-size: clamp(42px, 13vw, 68px);
+    line-height: 1;
   }
 
   .hero-date {
-    font-size: 24px;
-    margin-top: 4px;
+    font-size: 13px;
+    margin-top: 12px;
+    letter-spacing: 0.22em;
   }
 
   .welcome-text {
-    font-size: 20px;
-    line-height: 1.55;
+    font-size: 24px;
+    line-height: 1.45;
   }
 
   .info-grid {
@@ -330,13 +356,13 @@ h1 {
   }
 
   .info-box p {
-    font-size: 20px;
+    font-size: 28px;
   }
 
   .rsvp-section {
     margin-top: 30px;
     padding: 22px 16px;
-    border-radius: 22px;
+    border-radius: 10px;
   }
 
   .form-grid {
