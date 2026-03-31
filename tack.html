@@ -4,40 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tack för din OSA</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="color-wash wash-1" aria-hidden="true"></div>
-    <div class="color-wash wash-2" aria-hidden="true"></div>
-    <div class="color-wash wash-3" aria-hidden="true"></div>
+    <div class="page-shell">
+      <main class="page thankyou-card">
+        <section class="invite-card">
+          <img
+            class="corner-flower corner-flower-left"
+            src="./flowers1.jpg"
+            alt=""
+            aria-hidden="true"
+            loading="eager"
+            decoding="async"
+          />
 
-    <img
-      class="flower-background"
-      src="./flowers4.jpg"
-      alt=""
-      aria-hidden="true"
-      loading="eager"
-      decoding="async"
-    />
+          <img
+            class="corner-flower corner-flower-right"
+            src="./flowers2.jpg"
+            alt=""
+            aria-hidden="true"
+            loading="eager"
+            decoding="async"
+          />
 
-    <main class="page">
-      <section class="invite-card">
-        <div class="content">
-          <h1 class="hero-script">Tack!</h1>
-
-          <section class="welcome-section">
-            <p class="welcome-text">
+          <div class="thankyou-inner">
+            <h1 class="thankyou-title">Tack!</h1>
+            <p class="thankyou-text">
               Ditt svar har skickats och kommit fram.
             </p>
-          </section>
-        </div>
-      </section>
-    </main>
+            <a class="back-link" href="./index.html">Tillbaka</a>
+          </div>
+        </section>
+      </main>
+    </div>
   </body>
 </html>
