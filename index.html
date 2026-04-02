@@ -12,42 +12,24 @@
   </head>
   <body>
     <div class="page-shell">
-      <div class="outer-flower outer-flower-1" aria-hidden="true"></div>
-      <div class="outer-flower outer-flower-2" aria-hidden="true"></div>
-
       <main class="page">
         <section class="invite-card">
-          <img
-            class="corner-flower corner-flower-left"
-            src="./flowers1.jpg"
-            alt=""
-            aria-hidden="true"
-            loading="eager"
-            decoding="async"
-          />
-
-          <img
-            class="corner-flower corner-flower-right"
-            src="./flowers2.jpg"
-            alt=""
-            aria-hidden="true"
-            loading="eager"
-            decoding="async"
-          />
+          
+          <!-- FIX: inga crop -->
+          <img class="corner-flower corner-flower-left" src="./flowers1.jpg" alt="" />
+          <img class="corner-flower corner-flower-right" src="./flowers2.jpg" alt="" />
 
           <div class="content">
             <p class="hero-date">1 AUG 2026</p>
 
             <h1 class="hero-script">
-              <span>Louise &amp;</span>
-              <span>Fredrik</span>
+              <span>Louise &amp; Fredrik</span>
             </h1>
 
             <section class="welcome-section">
               <p class="welcome-text">
                 Vi gifter oss och bjuder in till bröllopsfest i vår trädgård! 
-                 Nedan hittar ni all nödvändig information. <br> <br>
-                </a>
+                Nedan hittar ni all nödvändig information.
               </p>
 
               <p class="welcome-text welcome-text-secondary">
@@ -77,104 +59,93 @@
               </div>
             </section>
 
-            <div class="bottom-flowers" aria-hidden="true">
-              <img
-                class="bottom-flower bottom-flower-left"
-                src="./flowers3.png"
-                alt=""
-                loading="lazy"
-                decoding="async"
-              />
-              <img
-                class="bottom-flower bottom-flower-right"
-                src="./flowers4.png"
-                alt=""
-                loading="lazy"
-                decoding="async"
-              />
+            <!-- NY TEXT -->
+            <p class="gift-text">
+              Vi har redan allt vi behöver – förutom en riktigt härlig bröllopsresa.  
+              Vill ni ge en gåva tar vi tacksamt emot ett bidrag dit.
+            </p>
+
+            <!-- BLOMMOR DIREKT MOT RSVP -->
+            <div class="bottom-flowers">
+              <img class="bottom-flower-left" src="./flowers3.png" alt="" />
+              <img class="bottom-flower-right" src="./flowers4.png" alt="" />
             </div>
 
             <section class="rsvp-section">
-              <p class="rsvp-text">OSA senast <span class="plain-font">1</span> maj <span class="plain-font">2026</span></p>
+              <p class="rsvp-text">
+                OSA senast <span class="plain-font">1</span> maj <span class="plain-font">2026</span>
+              </p>
 
               <form
                 class="rsvp-form"
                 action="https://formsubmit.co/louise.grape@gmail.com"
                 method="POST"
               >
-                <input type="hidden" name="_subject" value="Ny OSA till bröllopsfesten" />
-                <input type="hidden" name="_template" value="table" />
                 <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_url" value="https://krekula-grape.netlify.app/" />
-                <input type="hidden" name="_next" value="https://krekula-grape.netlify.app/tack.html" />
-                <input type="hidden" name="_replyto" value="email" />
-                <input
-                  type="text"
-                  name="_honey"
-                  class="hidden-honey"
-                  tabindex="-1"
-                  autocomplete="off"
-                />
 
                 <div class="form-grid">
                   <div class="form-field">
-                    <label for="guest-name">Namn</label>
-                    <input id="guest-name" name="namn" type="text" required />
+                    <label>Namn</label>
+                    <input type="text" required />
                   </div>
 
                   <div class="form-field">
-                    <label for="email">E-post</label>
-                    <input id="email" name="email" type="email" required />
+                    <label>E-post</label>
+                    <input type="email" required />
                   </div>
 
                   <div class="form-field">
-                    <label for="phone">Telefon</label>
-                    <input id="phone" name="telefon" type="tel" />
+                    <label>Telefon</label>
+                    <input type="tel" />
                   </div>
 
                   <div class="form-field">
-                    <label for="attending">Kommer du?</label>
-                    <select id="attending" name="osa" required>
+                    <label>Kommer du?</label>
+                    <select required>
                       <option value="">Välj</option>
-                      <option value="Ja, jag kommer">Ja, jag kommer</option>
-                      <option value="Nej, jag kan inte komma">Nej, jag kan inte komma</option>
+                      <option>Ja, klart jag kommer!</option>
+                      <option>Nej, tyvärr inte.</option>
                     </select>
                   </div>
-
                   <div class="form-field form-field-wide">
-                    <label for="tar-med-fler">Antal</label>
-                    <textarea
-                      id="tar-med-fler"
-                      name="tar-med-fler"
-                      rows="4"
-                      placeholder="Skriv om du tar med dig någon här"
-                    ></textarea>
-                  </div>
+                  <label for="guests">Antal</label>
+                  <textarea
+                    id="guests"
+                    name="antal"
+                    rows="3"
+                    placeholder="Skriv om du tar med dig någon här"
+                  ></textarea>
+                </div>
 
-                  <div class="form-field form-field-wide">
-                    <label for="allergies">Allergier / specialkost</label>
-                    <textarea
-                      id="allergies"
-                      name="allergier_specialkost"
-                      rows="4"
-                      placeholder="Skriv eventuella allergier eller specialkost här"
-                    ></textarea>
-                  </div>
+                <div class="form-field form-field-wide">
+                  <label for="allergies">Allergier / specialkost</label>
+                  <textarea
+                    id="allergies"
+                    name="allergier"
+                    rows="3"
+                    placeholder="Skriv eventuella allergier eller specialkost här"
+                  ></textarea>
+                </div>
 
-                  <div class="form-field form-field-wide">
-                    <label for="message">Meddelande</label>
-                    <textarea
-                      id="message"
-                      name="meddelande"
-                      rows="4"
-                      placeholder="Valfritt meddelande"
-                    ></textarea>
-                  </div>
+                <div class="form-field form-field-wide">
+                  <label for="message">Meddelande</label>
+                  <textarea
+                    id="message"
+                    name="meddelande"
+                    rows="3"
+                    placeholder="Valfritt meddelande"
+                  ></textarea>
+                </div>
                 </div>
 
                 <button type="submit" class="rsvp-button">Skicka OSA</button>
               </form>
+              <!-- NY STOR BILD -->
+            
             </section>
+            <img class="bottom-full-image" src="./flowers5.png" alt="" />
+            
+
           </div>
         </section>
       </main>
