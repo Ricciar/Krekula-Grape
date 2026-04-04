@@ -168,17 +168,10 @@ a {
 }
 
 .hero-script span {
-  display: block;
+  display: block; 
+  font-size: 140px
 }
 
-.hero-script span:first-child {
-  font-size: clamp(64px, 9vw, 142px);
-}
-
-.hero-script span:last-child {
-  margin-top: 4px;
-  font-size: clamp(90px, 12vw, 142px);
-}
 
 .welcome-section {
   max-width: 560px;
@@ -239,6 +232,14 @@ a {
 }
 .gift-text {
   margin: 30px auto 10px;
+  max-width: 550px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.boende-text {
+  margin: 30px auto 10px;
+  margin-bottom: -40px;
   max-width: 550px;
   text-align: center;
   font-size: 16px;
@@ -443,15 +444,18 @@ a {
   .invite-card {
     padding: 38px 26px 30px;
   }
+.hero-script span {
+  font-size: 140px
+}
 
   .corner-flower-left {
-    width: 120px;
-    height: 150px;
+    width: 220px;
+    height: 130px;
   }
 
   .corner-flower-right {
     width: 100px;
-    height: 90px;
+    height: 200px;
   }
 
   .bottom-flowers {
@@ -462,7 +466,7 @@ a {
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 260px;
+    width: 180px;
   }
 
 
@@ -470,7 +474,7 @@ a {
     position: absolute;
     right: 0;
     bottom: 0;
-    width: 230px;
+    width: 180px;
   }
 }
 
@@ -481,7 +485,7 @@ a {
   }
 
   .invite-card {
-    padding: 28px 16px 22px;
+    padding: 28px 50px 22px;
     border-radius: 18px;
   }
 
@@ -495,20 +499,16 @@ a {
     letter-spacing: 0.3em;
   }
 
-  .hero-script span:first-child {
-    font-size: clamp(44px, 12vw, 60px);
-  }
-
-  .hero-script span:last-child {
-    font-size: clamp(58px, 15vw, 78px);
-  }
+.hero-script span {
+  font-size: 120px
+}
 
   .welcome-section {
     margin-top: 20px;
   }
 
   .welcome-text {
-    font-size: 10px;
+    font-size: 18px;
     line-height: 1.55;
   }
 
@@ -518,35 +518,39 @@ a {
   }
 
   .info-box p {
-    font-size: 28px;
+    font-size: 16px;
   }
 
   .bottom-flowers {
     height: 180px;
     margin-top: 4px;
   }
-
+.boende-text {
+  margin-bottom: -80px;
+}
   .bottom-flower-left {
-    left: 0;
-    width: 130px;
-    height: 165px;
+    left: 10px;
+    width: 160px;
+    height: 95px;
   }
 
   .bottom-flower-right {
-    right: 0;
-    width: 96px;
-    height: 104px;
+    right: 50px;
+    width: 110px;
+    height: 120px;
   }
 
   .corner-flower-left {
-    width: 88px;
-    height: 110px;
+    width: 200px;
+    height: 130px;
   }
 
-  .corner-flower-right {
-    width: 96px;
-    height: 86px;
-  }
+ .corner-flower-right {
+  position: absolute;
+  top: -15px;
+  right: 0;
+  width: 70px;
+}
 
   .rsvp-section {
     padding: 22px 14px 18px;
