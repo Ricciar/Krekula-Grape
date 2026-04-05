@@ -316,7 +316,7 @@ a {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--label);
-  font-family: "Century Gothic", "Trebuchet MS", Arial, sans-serif;
+  font-family: "Cocomat Pro", "Trebuchet MS", "Helvetica Neue", Arial, sans-serif;
 }
 
 .form-field input,
