@@ -80,12 +80,13 @@
               </p>
 
               <form
-              class="rsvp-form"
-              action="https://formsubmit.co/louise.grape@gmail.com"
-              method="POST"
-            >
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_subject" value="Ny OSA till bröllopsfesten" />
+                class="rsvp-form"
+                name="osa"
+                method="POST"
+                data-netlify="true"
+                action="/tack.html"
+              >
+                <input type="hidden" name="form-name" value="osa" />
 
               <div class="form-grid">
                 <div class="form-field">
@@ -95,7 +96,7 @@
 
                 <div class="form-field">
                   <label for="email">E-post</label>
-                  <input type="email" id="email" name="epost" required />
+                  <input type="email" id="email" name="email" required />
                 </div>
 
                 <div class="form-field">
